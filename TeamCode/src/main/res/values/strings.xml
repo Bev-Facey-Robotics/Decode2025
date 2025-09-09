@@ -2,7 +2,7 @@
 <resources>
     <string-array name="telemetry_messages">
         <item>Beep boop. Boop Beep?</item>
-        <item>It\'s only the fourth rewrite.</item>
+        <item>It\'s only the fifth rewrite.</item>
         <item>It\'s not a bug, it\'s a feature.</item>
         <item>Thanks REV, very cool.</item>
         <item>Let\'s go gambling!!!</item>
@@ -12,7 +12,6 @@
         <item>Powered by sleep deprivation.</item>
         <item>"8–10$" according to cybereagles. It was 80$.</item>
         <item>NONE OF US DECIDED TO MEASURE BEFORE WE BUILT</item>
-        <item>Sleep deprived Prime</item>
         <item>Blåhaj (friend)</item>
         <item>Who the fuck needs sleep?</item>
         <item>Not my odo pods!</item>
@@ -41,5 +40,27 @@
         <item>Let\'s all sell our soul!</item>
         <item>Teaching this robot Failure Management</item>
         <item>IED lite: serving you since 1888</item>
+        <item>bUt i WaNnA bUiLd A rObOt</item>
+        <item>throwing things sounds like so much fun, especially for the driver</item>
+        <item>can\'t wait for teams to be launching shit at the spectators</item>
+        <item>who is even reading this?</item>
+        <item>The french took away our robotics room! Noooooo!</item>
+        <item>Fuck the french</item>
+        <item>dear god help us</item>
+        <item>ftc is not good cheap fun.</item>
+        <item>thank god this doesn\'t include sand</item>
+        <item>o7 never forget to who because before us (Wtf does this mean?)</item>
+        <item>"I don\'t like sand. It\'s coarse and rough and irritating and it gets everywhere."</item>
+        <item>The russians are invading!!!</item>
+        <item>Arguing about quantum physics with my cat is fucking infuriating</item>
+        <item>piracy isn\'t theft but i wish it was. I wish i could pirate a disney movie and they lose money</item>
+        <item>Our robot is dead, torn limb from limb</item>
+        <item>I\'m going to kill the french I swear to fucking God</item>
+        <item>if you remove the odo wheel i will break your kneecaps</item>
+        <item>pls don\'t make robot explode</item>
+        <item>I doth thunk hard and I thonk I has an idea.</item>
+        <item>you get a 50/50 chance the robot will work</item>
+        <item>last moment before disaster</item>
+        <item>why hub crash >:(</item>
     </string-array>
 </resources>

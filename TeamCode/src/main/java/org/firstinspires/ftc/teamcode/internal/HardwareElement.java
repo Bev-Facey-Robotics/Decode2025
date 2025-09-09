@@ -9,8 +9,6 @@ public abstract class HardwareElement {
     public boolean isBroken = false;
     public int reservedWithPriority = -1;
 
-    public Thread updateThread = null;
-
     /**
      * Use this to initialize your hardware devices and prepare to run the op mode.
      * @param hardwareMap The FTC hardware map for defining hardware.

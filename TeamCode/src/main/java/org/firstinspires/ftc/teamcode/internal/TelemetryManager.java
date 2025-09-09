@@ -42,7 +42,7 @@ public class TelemetryManager {
 
     private void TelemetryLoop() {
         while (true) {
-            telemetry.addLine("Jorje Himothy");
+            telemetry.addLine("guys we need to decide on a name");
             telemetry.addLine("Build Date: " + BuildConfig.BUILD_DATE);
             telemetry.addLine(randomMessage);
             telemetry.addLine();
