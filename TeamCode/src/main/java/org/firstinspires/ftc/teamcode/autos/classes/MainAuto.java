@@ -251,9 +251,9 @@ public abstract class MainAuto extends BaseOpMode {
         new Thread(() -> {
             while (opModeIsActive()) {
                 mecanumDrive.updatePoseEstimate();
-                telemetry.addData("x", mecanumDrive.pose.position.x);
-                telemetry.addData("y", mecanumDrive.pose.position.y);
-                telemetry.addData("Heading", mecanumDrive.pose.heading.toDouble());
+//                telemetry.addData("x", mecanumDrive.pose.position.x); // TODO: fix this
+//                telemetry.addData("y", mecanumDrive.pose.position.y);
+//                telemetry.addData("Heading", mecanumDrive.pose.heading.toDouble());
                 telemetry.update();
                 try {
                     Thread.sleep(100); // Update every 100ms
