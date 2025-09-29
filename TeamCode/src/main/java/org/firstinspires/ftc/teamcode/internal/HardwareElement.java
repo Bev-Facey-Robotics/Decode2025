@@ -39,4 +39,6 @@ public abstract class HardwareElement {
      * This function should, for example, stop all motors and set all servos to a safe position.
      */
     public abstract void stop();
+
+    public Thread updateThread = null;
 }
