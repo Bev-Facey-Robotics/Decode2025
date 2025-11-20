@@ -24,15 +24,9 @@ public class ManualDrive extends ActionElement {
 
 
             // Apply deadzone to joystick inputs
-            double driveSpeed = Math.abs(HardwareManager.opMode.gamepad1.left_stick_y) > deadzone ? -HardwareManager.opMode.gamepad1.left_stick_y : 0;
-            double strafeSpeed = Math.abs(HardwareManager.opMode.gamepad1.left_stick_x) > deadzone ? -HardwareManager.opMode.gamepad1.left_stick_x : 0;
-            double turnSpeed = Math.abs(HardwareManager.opMode.gamepad1.right_stick_x) > deadzone ? -HardwareManager.opMode.gamepad1.right_stick_x : 0;
-
-            // Invert drive & strafe directions
-            if (!HardwareManager.opMode.gamepad1.right_bumper) {
-                driveSpeed *= -1;
-                strafeSpeed *= -1;
-            }
+            double driveSpeed = Math.abs(HardwareManager.opMode.gamepad1.left_stick_y) > deadzone ? HardwareManager.opMode.gamepad1.left_stick_y : 0;
+            double strafeSpeed = Math.abs(HardwareManager.opMode.gamepad1.left_stick_x) > deadzone ? HardwareManager.opMode.gamepad1.left_stick_x : 0;
+            double turnSpeed = Math.abs(HardwareManager.opMode.gamepad1.right_stick_x) > deadzone ? HardwareManager.opMode.gamepad1.right_stick_x : 0;
 
             drive.speedLimit = speed;
             drive.move(driveSpeed, strafeSpeed, turnSpeed);

@@ -32,26 +32,10 @@ package org.firstinspires.ftc.teamcode.autos.classes;
 import android.annotation.SuppressLint;
 
 
-import androidx.annotation.NonNull;
 
-import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
-import com.acmerobotics.roadrunner.Action;
-import com.acmerobotics.roadrunner.ParallelAction;
-import com.acmerobotics.roadrunner.Pose2d;
-import com.acmerobotics.roadrunner.PoseVelocity2d;
-import com.acmerobotics.roadrunner.SequentialAction;
-import com.acmerobotics.roadrunner.TrajectoryActionBuilder;
-import com.acmerobotics.roadrunner.ftc.Actions;
 
-import org.firstinspires.ftc.teamcode.AprilTagPosFinder;
 import org.firstinspires.ftc.teamcode.CrossOpModeData;
-import org.firstinspires.ftc.teamcode.autos.rractions.RRFrontCombine;
-import org.firstinspires.ftc.teamcode.autos.rractions.RRSlide;
-import org.firstinspires.ftc.teamcode.hardware.Drive;
-import org.firstinspires.ftc.teamcode.hardware.Slide;
 import org.firstinspires.ftc.teamcode.internal.BaseOpMode;
-import org.firstinspires.ftc.teamcode.MecanumDrive;
-import org.firstinspires.ftc.teamcode.internal.HardwareManager;
 
 
 public abstract class MainAuto extends BaseOpMode {
@@ -72,16 +56,16 @@ public abstract class MainAuto extends BaseOpMode {
 
 
     //region Position
-    private MecanumDrive mecanumDrive = null; // Road Runner
-    private Pose2d importedinitialPose = importedinitialPose();
+//    private MecanumDrive mecanumDrive = null; // Road Runner
+//    private Pose2d importedinitialPose = importedinitialPose();
 
 
 
 
     //endregion
 
-    public RRSlide slide = null;
-    public RRFrontCombine frontCombine = null;
+//    public RRSlide slide = null;
+//    public RRFrontCombine frontCombine = null;
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -93,8 +77,8 @@ public abstract class MainAuto extends BaseOpMode {
             CrossOpModeData.isInitialized = true;
         }
         //endregion
-        slide = new RRSlide(hardwareMap);
-        frontCombine = new RRFrontCombine(hardwareMap);
+//        slide = new RRSlide(hardwareMap);
+//        frontCombine = new RRFrontCombine(hardwareMap);
         
         //region April Tag Initialization
         // Let's get our position finder ready
@@ -129,7 +113,7 @@ public abstract class MainAuto extends BaseOpMode {
         }
         //endregion
 
-        Pose2d initialPose = importedinitialPose;
+//        Pose2d initialPose = importedinitialPose;
         //aprilTagPosFinder.StopStreaming();
 
 
@@ -138,38 +122,38 @@ public abstract class MainAuto extends BaseOpMode {
 
         waitForStart(); // We shouldn't need this, but better to be safe than sorry!
 
-        mecanumDrive = new MecanumDrive(hardwareMap, initialPose);
+//        mecanumDrive = new MecanumDrive(hardwareMap, initialPose);
 
         //build all the trajectories here. Yes there is a lot
-        TrajectoryActionBuilder aCscoreStartingSpecimenTraj = scoreStartingSpecimenTraj(mecanumDrive, initialPose);
-        TrajectoryActionBuilder aCscoreStartingSpecimenTraj2 = scoreStartingSpecimenTraj2(mecanumDrive, aCscoreStartingSpecimenTraj);
-        TrajectoryActionBuilder aCscoreSecondSpecimenTraj = scoreSecondSpecimenTraj(mecanumDrive, aCscoreStartingSpecimenTraj);
-        TrajectoryActionBuilder aCscoreThirdSpecimenTraj = scoreThirdSpecimenTraj(mecanumDrive, aCscoreSecondSpecimenTraj);
-        TrajectoryActionBuilder aCscoreFourthSpecimenTraj = scoreFourthSpecimenTraj(mecanumDrive, aCscoreThirdSpecimenTraj);
-        TrajectoryActionBuilder aCscoreFifthSpecimenTraj = scoreFifthSpecimenTraj(mecanumDrive, aCscoreFourthSpecimenTraj);
-        TrajectoryActionBuilder aCwallSpecimenTraj = wallSpecimenTraj(mecanumDrive, aCscoreFifthSpecimenTraj);
-        TrajectoryActionBuilder aCkickSample1Traj = kickSample1Traj(mecanumDrive, aCwallSpecimenTraj);
-        TrajectoryActionBuilder aCkickSample2Traj = kickSample2Traj(mecanumDrive, aCkickSample1Traj);
-        TrajectoryActionBuilder aCkickSample3Traj = kickSample3Traj(mecanumDrive, aCkickSample2Traj);
-        TrajectoryActionBuilder aCmoveFromWallTraj = moveFromWall(mecanumDrive, aCkickSample3Traj);
-        TrajectoryActionBuilder aCparkRunTraj = parkRun(mecanumDrive, aCmoveFromWallTraj);
-        TrajectoryActionBuilder aCSleep = sleepHalfSec(mecanumDrive, aCparkRunTraj);
-        TrajectoryActionBuilder aCSTwoSleep = sleepTwoSec(mecanumDrive, aCSleep);
-
-        Action aCwallSpecimenActi = aCwallSpecimenTraj.build();
-        Action aCkickSample1Acti = aCkickSample1Traj.build();
-        Action aCkickSample2Acti = aCkickSample2Traj.build();
-        Action aCkickSample3Acti = aCkickSample3Traj.build();
-        Action aCscoreStartingSpecimenActi = aCscoreStartingSpecimenTraj.build();
-        Action aCscoreStartingSpecimenActi2 = aCscoreStartingSpecimenTraj2.build();
-        Action aCscoreSecondSpecimenActi = aCscoreSecondSpecimenTraj.build();
-        Action aCscoreThirdSpecimenActi = aCscoreThirdSpecimenTraj.build();
-        Action aCscoreFourthSpecimenActi = aCscoreFourthSpecimenTraj.build();
-        Action aCscoreFifthSpecimenActi = aCscoreFifthSpecimenTraj.build();
-        Action aCmoveFromWallActi = aCmoveFromWallTraj.build();
-        Action aCparkRunActi = aCparkRunTraj.build();
-        Action aCSleepActi = aCSleep.build(); // something we don't know how to do lol
-        Action aCTwoSleepActi = aCSTwoSleep.build();
+//        TrajectoryActionBuilder aCscoreStartingSpecimenTraj = scoreStartingSpecimenTraj(mecanumDrive, initialPose);
+//        TrajectoryActionBuilder aCscoreStartingSpecimenTraj2 = scoreStartingSpecimenTraj2(mecanumDrive, aCscoreStartingSpecimenTraj);
+//        TrajectoryActionBuilder aCscoreSecondSpecimenTraj = scoreSecondSpecimenTraj(mecanumDrive, aCscoreStartingSpecimenTraj);
+//        TrajectoryActionBuilder aCscoreThirdSpecimenTraj = scoreThirdSpecimenTraj(mecanumDrive, aCscoreSecondSpecimenTraj);
+//        TrajectoryActionBuilder aCscoreFourthSpecimenTraj = scoreFourthSpecimenTraj(mecanumDrive, aCscoreThirdSpecimenTraj);
+//        TrajectoryActionBuilder aCscoreFifthSpecimenTraj = scoreFifthSpecimenTraj(mecanumDrive, aCscoreFourthSpecimenTraj);
+//        TrajectoryActionBuilder aCwallSpecimenTraj = wallSpecimenTraj(mecanumDrive, aCscoreFifthSpecimenTraj);
+//        TrajectoryActionBuilder aCkickSample1Traj = kickSample1Traj(mecanumDrive, aCwallSpecimenTraj);
+//        TrajectoryActionBuilder aCkickSample2Traj = kickSample2Traj(mecanumDrive, aCkickSample1Traj);
+//        TrajectoryActionBuilder aCkickSample3Traj = kickSample3Traj(mecanumDrive, aCkickSample2Traj);
+//        TrajectoryActionBuilder aCmoveFromWallTraj = moveFromWall(mecanumDrive, aCkickSample3Traj);
+//        TrajectoryActionBuilder aCparkRunTraj = parkRun(mecanumDrive, aCmoveFromWallTraj);
+//        TrajectoryActionBuilder aCSleep = sleepHalfSec(mecanumDrive, aCparkRunTraj);
+//        TrajectoryActionBuilder aCSTwoSleep = sleepTwoSec(mecanumDrive, aCSleep);
+//
+//        Action aCwallSpecimenActi = aCwallSpecimenTraj.build();
+//        Action aCkickSample1Acti = aCkickSample1Traj.build();
+//        Action aCkickSample2Acti = aCkickSample2Traj.build();
+//        Action aCkickSample3Acti = aCkickSample3Traj.build();
+//        Action aCscoreStartingSpecimenActi = aCscoreStartingSpecimenTraj.build();
+//        Action aCscoreStartingSpecimenActi2 = aCscoreStartingSpecimenTraj2.build();
+//        Action aCscoreSecondSpecimenActi = aCscoreSecondSpecimenTraj.build();
+//        Action aCscoreThirdSpecimenActi = aCscoreThirdSpecimenTraj.build();
+//        Action aCscoreFourthSpecimenActi = aCscoreFourthSpecimenTraj.build();
+//        Action aCscoreFifthSpecimenActi = aCscoreFifthSpecimenTraj.build();
+//        Action aCmoveFromWallActi = aCmoveFromWallTraj.build();
+//        Action aCparkRunActi = aCparkRunTraj.build();
+//        Action aCSleepActi = aCSleep.build(); // something we don't know how to do lol
+//        Action aCTwoSleepActi = aCSTwoSleep.build();
 
 
 
@@ -179,30 +163,30 @@ public abstract class MainAuto extends BaseOpMode {
 
         waitForStart();
 
-        Actions.runBlocking(new SequentialAction(
-//                new ParallelAction(
-//                        aCmoveFromWall,
-//                        frontCombine.MoveToPickup()
+//        Actions.runBlocking(new SequentialAction(
+////                new ParallelAction(
+////                        aCmoveFromWall,
+////                        frontCombine.MoveToPickup()
+////
+////                ),
+//                aCTwoSleepActi,
 //
+//                ///Placing the preloaded specimen on high rung
+//                new ParallelAction(
+//                        aCscoreStartingSpecimenActi
+////                        slide.MoveToHighChamber()
 //                ),
-                aCTwoSleepActi,
-
-                ///Placing the preloaded specimen on high rung
-                new ParallelAction(
-                        aCscoreStartingSpecimenActi,
-                        slide.MoveToHighChamber()
-                ),
-                aCscoreStartingSpecimenActi,
-                aCTwoSleepActi,
-                ///Releasing the specimens on high chamber
-                slide.ReleaseSpeciminFromHigh(),
-                aCTwoSleepActi,
-//                aCwallSpecimenActi,
-                aCparkRunActi
-
-
-
-        ));
+//                aCscoreStartingSpecimenActi,
+//                aCTwoSleepActi,
+//                ///Releasing the specimens on high chamber
+////                slide.ReleaseSpeciminFromHigh(),
+//                aCTwoSleepActi,
+////                aCwallSpecimenActi,
+//                aCparkRunActi
+//
+//
+//
+//        ));
 ///Batting the other specimens into the obv zone + grabbing a specimen
 //                new SequentialAction(
 //                       aCkickSample1Traj,
@@ -250,7 +234,7 @@ public abstract class MainAuto extends BaseOpMode {
 
         new Thread(() -> {
             while (opModeIsActive()) {
-                mecanumDrive.updatePoseEstimate();
+//                mecanumDrive.updatePoseEstimate();
 //                telemetry.addData("x", mecanumDrive.pose.position.x); // TODO: fix this
 //                telemetry.addData("y", mecanumDrive.pose.position.y);
 //                telemetry.addData("Heading", mecanumDrive.pose.heading.toDouble());
@@ -274,30 +258,43 @@ public abstract class MainAuto extends BaseOpMode {
     }
 
 
+//
+//    public abstract TrajectoryActionBuilder wallSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder kickSample1Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder kickSample2Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder kickSample3Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreStartingSpecimenTraj (MecanumDrive mecanumDrive, Pose2d initialPose);
+//    public abstract TrajectoryActionBuilder scoreStartingSpecimenTraj2 (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreSecondSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreThirdSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreFourthSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreFifthSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder moveFromWall (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder parkRun (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
 
-    public abstract TrajectoryActionBuilder wallSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder kickSample1Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder kickSample2Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder kickSample3Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder scoreStartingSpecimenTraj (MecanumDrive mecanumDrive, Pose2d initialPose);
-    public abstract TrajectoryActionBuilder scoreStartingSpecimenTraj2 (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder scoreSecondSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder scoreThirdSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder scoreFourthSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder scoreFifthSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder moveFromWall (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
-    public abstract TrajectoryActionBuilder parkRun (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract Pose2d importedinitialPose();
+//    public  TrajectoryActionBuilder sleepHalfSec(MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction) {
+//        return previousAction.endTrajectory().fresh()
+//                .waitSeconds(0.5);
+//    }
+//    public  TrajectoryActionBuilder sleepTwoSec(MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction) {
+//        return previousAction.endTrajectory().fresh()
+//                .waitSeconds(10);
+//    }
 
-    public abstract Pose2d importedinitialPose();
-    public  TrajectoryActionBuilder sleepHalfSec (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction) {
-        return previousAction.endTrajectory().fresh()
-                .waitSeconds(0.5);
-    }
-    public  TrajectoryActionBuilder sleepTwoSec(MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction) {
-        return previousAction.endTrajectory().fresh()
-                .waitSeconds(10);
-    }
-
+//
+//    public abstract TrajectoryActionBuilder wallSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder kickSample1Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder kickSample2Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder kickSample3Traj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreStartingSpecimenTraj (MecanumDrive mecanumDrive, Pose2d initialPose);
+//    public abstract TrajectoryActionBuilder scoreStartingSpecimenTraj2 (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreSecondSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreThirdSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreFourthSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder scoreFifthSpecimenTraj (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder moveFromWall (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
+//    public abstract TrajectoryActionBuilder parkRun (MecanumDrive mecanumDrive, TrajectoryActionBuilder previousAction);
 
 
 

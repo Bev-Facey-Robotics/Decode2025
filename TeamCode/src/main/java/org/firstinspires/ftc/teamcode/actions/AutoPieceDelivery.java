@@ -1,9 +1,6 @@
 package org.firstinspires.ftc.teamcode.actions;
 
-import org.firstinspires.ftc.teamcode.hardware.Slide;
 import org.firstinspires.ftc.teamcode.internal.ActionElement;
-import org.firstinspires.ftc.teamcode.internal.HardwareManager;
-import org.firstinspires.ftc.teamcode.internal.TelemetryManager;
 
 public class AutoPieceDelivery extends ActionElement {
     @Override
